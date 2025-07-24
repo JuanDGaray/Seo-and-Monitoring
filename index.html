@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soluciones Fullstack en Python, Flask & Django</title>
+    <meta name="description" content="Desarrollador Fullstack experto en Python, Flask y Django. Soluciones modernas, rápidas y escalables para tu negocio." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!--
+      NOTA: Para producción, instala Tailwind CSS localmente y compila los estilos.
+      Guía oficial: https://tailwindcss.com/docs/installation
+    -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#0f172a', // azul oscuro
+              accent: '#06d6a0', // verde lima/cian
+              secondary: '#334155', // gris azulado
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      html { scroll-behavior: smooth; }
+      body { font-family: 'Inter', sans-serif; }
+    </style>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f172a'/%3E%3Cpath d='M10 16l4-4m0 0l4 4m-4-4v8' stroke='%2306d6a0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  </head>
+  <body class="bg-primary text-white min-h-screen flex flex-col">
+    <!-- Selector de idioma con banderas -->
+    <div class="fixed top-4 right-4 z-50 flex gap-2">
+      <a href="index.html" title="Español">
+        <img src="img/col.png" alt="Español" class="h-7 w-7 rounded-full border border-white shadow hover:scale-110 transition-transform" />
+      </a>
+      <a href="index_en.html" title="English">
+        <img src="img/us.png" alt="English" class="h-7 w-7 rounded-full border border-white shadow hover:scale-110 transition-transform" />
+      </a>
+    </div>
+    <!-- Hero Section -->
+    <section class="relative flex flex-col items-center justify-center min-h-[80vh] px-4 text-center bg-gradient-to-b from-primary to-secondary overflow-hidden animate-gradient-bg">
+      <div class="relative z-10 max-w-2xl mx-auto animate-fade-in-up">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+          Soluciones Fullstack en <span class="text-accent">Python</span>, Flask & Django
+        </h1>
+        <p class="text-lg md:text-xl text-gray-300 mb-8">
+          Lleva tu negocio al siguiente nivel con desarrollo web profesional, rápido y escalable.
+        </p>
+        <a href="#contacto" class="inline-block px-8 py-3 bg-accent text-primary font-semibold rounded-lg shadow-lg hover:scale-105 transition-transform duration-200">
+          Solicita tu solución
+        </a>
+      </div>
+    </section>
+
+    <!-- Quién Soy -->
+    <section class="max-w-3xl mx-auto py-16 px-4">
+      <div class="flex flex-col md:flex-row items-center gap-8">
+        <div class="flex-shrink-0">
+          <!-- User Icon -->
+          <div class="bg-secondary rounded-full p-4 shadow-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 15c2.5 0 4.847.655 6.879 1.804M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+        </div>
+        <div>
+          <h2 class="text-2xl font-semibold mb-2">¿Quién soy?</h2>
+          <p class="text-gray-300 text-lg">
+            Soy desarrollador Fullstack especializado en <span class="text-accent font-semibold">Python</span>, <span class="text-accent font-semibold">Flask</span> y <span class="text-accent font-semibold">Django</span>. Me enfoco en crear soluciones orientadas a resultados, con comunicación clara y procesos eficientes para que tu negocio crezca sin límites.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Servicios como productos -->
+    <section class="bg-secondary py-16 px-4">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-semibold text-center mb-10">Planes de servicio</h2>
+        <p class="text-center text-gray-300 mb-12 max-w-2xl mx-auto">Todos los planes incluyen: <span class="text-accent font-semibold">Monitoreo</span>, <span class="text-accent font-semibold">SEO</span> y <span class="text-accent font-semibold">Optimización</span> para tu negocio. Elige el que mejor se adapte a tus necesidades.</p>
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Plan Pro (Básico) -->
+          <div class="bg-primary rounded-xl p-8 shadow-lg flex flex-col items-center text-center hover:scale-105 transition-transform duration-300 relative justify-between">
+            <div class="mb-4">
+              <!-- FA Cube Icon -->
+              <i class="fa-solid fa-cube text-accent text-4xl"></i>
+            </div>
+            <h3 class="font-bold text-xl mb-2">Básico</h3>
+            <ul class="text-gray-300 mb-4 space-y-1 text-left">
+              <li>✔ Monitoreo básico de sistemas</li>
+              <li>✔ SEO básico</li>
+              <li>✔ Optimización básica</li>
+            </ul>
+            <div class="mb-2 text-accent font-bold text-2xl absolute top-0 right-0 bg-blue-800 rounded-bl-xl m-1 rounded-tr-xl px-2 py-1">$18 <span class="text-base font-normal text-gray-300">USD/hora</span></div>
+            <div class="text-gray-400 text-sm">10 horas semanales</div>
+            <a href="#" data-plan="basico" class="text-accent underline hover:text-accent/80 font-semibold transition-colors duration-200 mb-2">Leer más</a>
+            <a href="https://www.mercadopago.com.co/subscriptions/checkout?preapproval_plan_id=00b4244596e041cba568f184ddab2cab" name="MP-payButton" class='blue-button mt-4 w-full'>Suscribirme</a>
+            <div class="text-xs text-gray-400 mt-2 text-center">El pago semanal se hará en pesos colombianos a través de Mercado Pago.</div>
+          </div>
+          <!-- Plan Avanzado (agotado) -->
+          <div class="bg-primary rounded-xl p-8 shadow-lg flex flex-col items-center text-center relative justify-between opacity-50 cursor-not-allowed select-none">
+            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center rounded-xl z-20">
+              <span class="text-accent text-lg font-bold bg-primary bg-opacity-80 px-4 py-2 rounded-xl border-2 border-accent">Agotado</span>
+            </div>
+            <div class="mb-4 z-10">
+              <!-- FA Chart Line Icon -->
+              <i class="fa-solid fa-chart-line text-accent text-4xl"></i>
+            </div>
+            <h3 class="font-bold text-xl mb-2 z-10">Avanzado</h3>
+            <ul class="text-gray-300 mb-4 space-y-1 text-left z-10">
+              <li>✔ Monitoreo de sistemas</li>
+              <li>✔ SEO optimizado</li>
+              <li>✔ Optimización de procesos</li>
+            </ul>
+            <div class="mb-2 text-accent font-bold text-2xl absolute top-0 right-0 bg-blue-800 rounded-bl-xl m-1 rounded-tr-xl px-2 py-1 z-10">$15 <span class="text-base font-normal text-gray-300">USD/hora</span></div>
+            <div class="text-gray-400 text-sm z-10">15 horas semanales</div>
+            <button class="px-6 py-2 bg-gray-500 text-gray-300 font-semibold rounded-lg shadow cursor-not-allowed z-10" data-plan="avanzado" disabled>Leer más</button>
+          </div>
+          <!-- Plan Esencial (agotado) -->
+          <div class="bg-primary rounded-xl p-8 shadow-lg flex flex-col items-center text-center relative justify-between opacity-50 cursor-not-allowed select-none">
+            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center rounded-xl z-20">
+              <span class="text-accent text-lg font-bold bg-primary bg-opacity-80 px-4 py-2 rounded-xl border-2 border-accent">Agotado</span>
+            </div>
+            <div class="mb-4 z-10">
+              <!-- FA Cogs Icon -->
+              <i class="fa-solid fa-cogs text-accent text-4xl"></i>
+            </div>
+            <h3 class="font-bold text-xl mb-2 z-10">Esencial</h3>
+            <ul class="text-gray-300 mb-4 space-y-1 text-left z-10">
+              <li>✔ Monitoreo avanzado</li>
+              <li>✔ SEO avanzado</li>
+              <li>✔ Optimización avanzada</li>
+            </ul>
+            <div class="mb-2 text-accent font-bold text-2xl absolute top-0 right-0 bg-blue-800 rounded-bl-xl m-1 rounded-tr-xl px-2 py-1 z-10">$10 <span class="text-base font-normal text-gray-300">USD/hora</span></div>
+            <div class="text-gray-400 text-sm z-10">20 horas semanales</div>
+            <button class="px-6 py-2 bg-gray-500 text-gray-300 font-semibold rounded-lg shadow cursor-not-allowed z-10" data-plan="esencial" disabled>Leer más</button>
+          </div>
+        </div>
+      </div>
+      
+    </section>
+        <!-- Logos de empresas con animación horizontal -->
+        <section class="py-12 bg-primary">
+            <h2 class="text-center text-xl font-semibold text-gray-300 mb-8">Empresas que confían en este servicio</h2>
+            <div class="overflow-hidden h-24 flex items-center justify-center relative">
+              <div class="flex flex-row gap-12 animate-logos-horizontal items-center" style="width: 200%;">
+                <img src="img/okvet_logo_tagline.png" alt="OkVet" class="h-16 w-16 object-contain bg-white rounded-full shadow-lg p-2" />
+                <img src="img/hilton.jpeg" alt="Hilton" class="h-16 w-16 object-contain bg-white rounded-full shadow-lg p-2" />
+                <img src="img/contecar.png" alt="Contecar" class="h-16 w-16 object-contain bg-white rounded-full shadow-lg p-2" />
+                <img src="img/dv.jpeg" alt="DV" class="h-16 w-16 object-contain bg-white rounded-full shadow-lg p-2" />
+                <img src="img/udf.png" alt="UDF" class="h-16 w-16 object-contain bg-white rounded-full shadow-lg p-2" />
+                <img src="img/kodland.png" alt="Kodland" class="h-16 w-16 object-contain bg-white rounded-full shadow-lg p-2" />
+                <!-- Duplicar para loop infinito visual -->
+                <img src="img/okvet_logo_tagline.png" alt="OkVet" class="h-16 w-16 object-contain bg-white rounded-full shadow-lg p-2" />
+                <img src="img/hilton.jpeg" alt="Hilton" class="h-16 w-16 object-contain bg-white rounded-full shadow-lg p-2" />
+                <img src="img/contecar.png" alt="Contecar" class="h-16 w-16 object-contain bg-white rounded-full shadow-lg p-2" />
+                <img src="img/dv.jpeg" alt="DV" class="h-16 w-16 object-contain bg-white rounded-full shadow-lg p-2" />
+                <img src="img/udf.png" alt="UDF" class="h-16 w-16 object-contain bg-white rounded-full shadow-lg p-2" />
+                <img src="img/kodland.png" alt="Kodland" class="h-16 w-16 object-contain bg-white rounded-full shadow-lg p-2" />
+              </div>
+            </div>
+          </section>
+
+    <!-- Beneficios clave -->
+    <section class="max-w-4xl mx-auto py-16 px-4">
+      <h2 class="text-2xl md:text-3xl font-semibold text-center mb-10">¿Por qué elegirme?</h2>
+      <div class="flex flex-col md:flex-row gap-8 justify-center">
+        <div class="flex-1 bg-secondary rounded-xl p-6 flex items-center gap-4 shadow-md">
+          <!-- Lightning Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-accent flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+          <span class="text-lg">Rapidez y entregas a tiempo</span>
+        </div>
+        <div class="flex-1 bg-secondary rounded-xl p-6 flex items-center gap-4 shadow-md">
+          <!-- Chat Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-accent flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v8a2 2 0 01-2 2H7a2 2 0 01-2-2V10a2 2 0 012-2h2m4-4h4a2 2 0 012 2v4a2 2 0 01-2 2h-4a2 2 0 01-2-2V6a2 2 0 012-2z" />
+          </svg>
+          <span class="text-lg">Comunicación clara y directa</span>
+        </div>
+        <div class="flex-1 bg-secondary rounded-xl p-6 flex items-center gap-4 shadow-md">
+          <!-- Scale Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-accent flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 10c-4.41 0-8-1.79-8-4V6c0-2.21 3.59-4 8-4s8 1.79 8 4v8c0 2.21-3.59 4-8 4z" />
+          </svg>
+          <span class="text-lg">Soluciones escalables y robustas</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="bg-secondary py-16 px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-semibold text-center mb-10">Testimonios</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Testimonio OkVet -->
+          <div class="bg-primary rounded-xl p-6 shadow-lg animate-fade-in-up">
+            <p class="text-gray-200 mb-4">"Gracias al sistema de monitoreo y optimización, nuestra plataforma veterinaria funciona sin interrupciones y nuestros clientes lo notan. ¡Excelente comunicación y soporte!"</p>
+            <div class="flex items-center gap-3">
+              <img src="img/okvet_logo_tagline.png" alt="OkVet" class="h-10 w-10 object-contain bg-white rounded-full shadow" />
+              <div>
+                <span class="font-semibold">Dra. Laura Gómez</span><br/>
+                <span class="text-gray-400 text-sm">Directora General, OkVet</span>
+              </div>
+            </div>
+          </div>
+          <!-- Testimonio Hilton -->
+          <div class="bg-primary rounded-xl p-6 shadow-lg animate-fade-in-up" style="animation-delay: 0.2s;">
+            <p class="text-gray-200 mb-4">"La integración de dashboards y reportes automáticos nos permitió mejorar la experiencia de nuestros huéspedes y optimizar procesos internos."</p>
+            <div class="flex items-center gap-3">
+              <img src="img/hilton.jpeg" alt="Hilton" class="h-10 w-10 object-contain bg-white rounded-full shadow" />
+              <div>
+                <span class="font-semibold">Paloma Pérez</span><br/>
+                <span class="text-gray-400 text-sm">IT Manager, Hilton</span>
+              </div>
+            </div>
+          </div>
+          <!-- Testimonio Contecar -->
+          <div class="bg-primary rounded-xl p-6 shadow-lg animate-fade-in-up" style="animation-delay: 0.4s;">
+            <p class="text-gray-200 mb-4">"Automatizamos procesos clave en logística y ahora ahorramos horas cada semana. La solución fue escalable y el soporte, impecable."</p>
+            <div class="flex items-center gap-3">
+              <img src="img/contecar.png" alt="Contecar" class="h-10 w-10 object-contain bg-white rounded-full shadow" />
+              <div>
+                <span class="font-semibold">María Fernanda Ruiz</span><br/>
+                <span class="text-gray-400 text-sm">Gerente de Operaciones, Contecar</span>
+              </div>
+            </div>
+          </div>
+          <!-- Testimonio Kodland -->
+          <div class="bg-primary rounded-xl p-6 shadow-lg animate-fade-in-up" style="animation-delay: 0.6s;">
+            <p class="text-gray-200 mb-4">"El desarrollo de landing pages y la optimización SEO nos ayudó a captar más estudiantes y mejorar nuestra presencia digital."</p>
+            <div class="flex items-center gap-3">
+              <img src="img/kodland.png" alt="Kodland" class="h-10 w-10 object-contain bg-white rounded-full shadow" />
+              <div>
+                <span class="font-semibold">Sofía Méndez</span><br/>
+                <span class="text-gray-400 text-sm">Coordinadora de Marketing, Kodland</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Llamado a la acción final -->
+    <section id="contacto" class="py-20 px-4 bg-gradient-to-t from-primary to-secondary flex flex-col items-center">
+      <h2 class="text-3xl font-bold mb-6 text-center">¿Listo para transformar tu negocio?</h2>
+      <a href="https://wa.me/573128104046?text=Hola%2C%20quiero%20información%20sobre%20tus%20servicios%20de%20desarrollo%20web" target="_blank" rel="noopener" class="px-10 py-4 bg-accent text-primary font-bold rounded-xl text-xl shadow-xl hover:scale-105 transition-transform duration-200">
+        Contáctame
+      </a>
+    </section>
+
+    <!-- Logos de empresas con animación horizontal -->
+    <section class="py-12 bg-primary">
+      <h2 class="text-center text-xl font-semibold text-gray-300 mb-8">Empresas que confían en este servicio</h2>
+      <div class="overflow-hidden h-24 flex items-center justify-center relative">
+        <div class="flex flex-row gap-12 animate-logos-horizontal items-center" style="width: 200%;">
+          <img src="img/okvet_logo_tagline.png" alt="OkVet" class="h-16 w-16 object-contain bg-white rounded-full shadow-lg p-2" />
+          <img src="img/hilton.jpeg" alt="Hilton" class="h-16 w-16 object-contain bg-white rounded-full shadow-lg p-2" />
+          <img src="img/contecar.png" alt="Contecar" class="h-16 w-16 object-contain bg-white rounded-full shadow-lg p-2" />
+          <img src="img/dv.jpeg" alt="DV" class="h-16 w-16 object-contain bg-white rounded-full shadow-lg p-2" />
+          <img src="img/udf.png" alt="UDF" class="h-16 w-16 object-contain bg-white rounded-full shadow-lg p-2" />
+          <img src="img/kodland.png" alt="Kodland" class="h-16 w-16 object-contain bg-white rounded-full shadow-lg p-2" />
+          <!-- Duplicar para loop infinito visual -->
+          <img src="img/okvet_logo_tagline.png" alt="OkVet" class="h-16 w-16 object-contain bg-white rounded-full shadow-lg p-2" />
+          <img src="img/hilton.jpeg" alt="Hilton" class="h-16 w-16 object-contain bg-white rounded-full shadow-lg p-2" />
+          <img src="img/contecar.png" alt="Contecar" class="h-16 w-16 object-contain bg-white rounded-full shadow-lg p-2" />
+          <img src="img/dv.jpeg" alt="DV" class="h-16 w-16 object-contain bg-white rounded-full shadow-lg p-2" />
+          <img src="img/udf.png" alt="UDF" class="h-16 w-16 object-contain bg-white rounded-full shadow-lg p-2" />
+          <img src="img/kodland.png" alt="Kodland" class="h-16 w-16 object-contain bg-white rounded-full shadow-lg p-2" />
+        </div>
+      </div>
+    </section>
+    <style>
+      .animate-logos-horizontal {
+        animation: logosHorizontal 16s linear infinite;
+      }
+      @keyframes logosHorizontal {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+    </style>
+    <!-- Animaciones suaves -->
+    <style>
+      .animate-fade-in-up {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+      }
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      .animate-gradient-bg {
+        background: linear-gradient(135deg, #0f172a, #334155, #06d69e81, #00b4d857);
+        background-size: 300% 300%;
+        animation: gradientBG 15s ease-in-out infinite;
+      }
+      @keyframes gradientBG {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+    </style>
+    <!-- Modales de información de planes -->
+    <div id="modal-overlay" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden">
+      <div id="modal-content" class="bg-primary rounded-2xl shadow-2xl max-w-3xl w-full p-8 relative animate-fade-in-up">
+        <button id="modal-close" class="absolute top-4 right-4 text-gray-400 hover:text-accent text-2xl font-bold focus:outline-none" aria-label="Cerrar">&times;</button>
+        <div id="modal-body">
+          <!-- Aquí se inserta el contenido dinámico del modal -->
+        </div>
+      </div>
+    </div>
+    <script>
+      // Info detallada de cada plan
+      const planDetails = {
+        'basico': `
+        <h3 class='text-2xl font-bold mb-4 text-accent'>Plan Básico</h3>
+        <ul class='mb-4 text-gray-300 space-y-2 text-left'>
+            <li><b>Monitoreo básico de sistemas:</b> Supervisión continua de servicios esenciales (servidor web, base de datos, disponibilidad del sitio). Alertas por correo electrónico ante caídas o errores críticos. Acceso a un panel de métricas simplificado.</li>
+            <li><b>SEO inicial y estructura técnica:</b> Configuración de títulos, meta-descripciones, estructura de URLs amigables, sitemap.xml, archivo robots.txt y verificación con Google Search Console.</li>
+            <li><b>Optimización de rendimiento:</b> Mejora de velocidad de carga mediante compresión de imágenes y archivos, minificación de CSS/JS, y limpieza de código redundante.</li>
+            <li><b>Copias de seguridad semanales:</b> Automatización de backups de base de datos y archivos críticos del sitio. Almacenamiento seguro con retención de 4 semanas.</li>
+            <li><b>Blog básico para SEO:</b> Implementación de una sección de blog para impulsar el posicionamiento orgánico. Configuración inicial con estructura optimizada y etiquetas meta.</li>
+            <li><b>Soporte técnico:</b> Tiempo de respuesta garantizado de hasta 12 horas. Incluye hasta 2 revisiones técnicas o ajustes al mes.</li>
+            <li><b>Asesoría estratégica básica:</b> Orientación inicial para el crecimiento de la marca en línea, incluyendo recomendaciones sobre contenidos, palabras clave y estructura web.</li>
+        </ul>
+        <div class='text-accent font-bold text-xl mb-2'>$20 USD/hora</div>
+        <div class='text-gray-400 mb-2'>10 horas semanales</div>
+        `,
+        'avanzado': `
+          <h3 class='text-2xl font-bold mb-4 text-accent'>Plan Avanzado</h3>
+          <ul class='mb-4 text-gray-300 space-y-2 text-left'>
+            <li><b>Monitoreo de sistemas:</b> Panel avanzado, alertas personalizadas, reportes automáticos, integración con apps de mensajería.</li>
+            <li><b>SEO optimizado:</b> Estrategia de palabras clave, optimización de contenido, análisis de competencia, mejoras técnicas.</li>
+            <li><b>Optimización de procesos:</b> Refactorización de código, automatización de tareas, optimización de base de datos.</li>
+            <li><b>Soporte:</b> Respuesta en 24h, hasta 4 revisiones mensuales.</li>
+          </ul>
+          <div class='text-accent font-bold text-xl mb-2'>$15 USD/hora</div>
+          <div class='text-gray-400 mb-2'>15 horas semanales</div>
+        `,
+        'esencial': `
+          <h3 class='text-2xl font-bold mb-4 text-accent'>Plan Esencial</h3>
+          <ul class='mb-4 text-gray-300 space-y-2 text-left'>
+            <li><b>Monitoreo avanzado:</b> Integración con sistemas de monitoreo profesional, alertas en tiempo real, paneles personalizados.</li>
+            <li><b>SEO avanzado:</b> Estrategia completa, linkbuilding, optimización técnica profunda, seguimiento de resultados.</li>
+            <li><b>Optimización avanzada:</b> Escalabilidad, seguridad, optimización de infraestructura, pruebas de carga.</li>
+            <li><b>Soporte premium:</b> Respuesta en 12h, revisiones ilimitadas, asesoría continua.</li>
+          </ul>
+          <div class='text-accent font-bold text-xl mb-2'>$10 USD/hora</div>
+          <div class='text-gray-400 mb-2'>20 horas semanales
+            
+        </div>
+          
+        `
+      };
+      // Abrir modal
+      document.querySelectorAll('[data-plan]').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          const plan = this.getAttribute('data-plan');
+          document.getElementById('modal-body').innerHTML = planDetails[plan];
+          document.getElementById('modal-overlay').classList.remove('hidden');
+        });
+      });
+      // Cerrar modal
+      document.getElementById('modal-close').onclick = function() {
+        document.getElementById('modal-overlay').classList.add('hidden');
+      };
+      // Cerrar modal al hacer click fuera del contenido
+      document.getElementById('modal-overlay').addEventListener('click', function(e) {
+        if (e.target === this) {
+          this.classList.add('hidden');
+        }
+      });
+      // Cerrar con ESC
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          document.getElementById('modal-overlay').classList.add('hidden');
+        }
+      });
+    </script>
+    <footer class="text-center text-gray-500 py-8 text-sm">
+      &copy; 2024 Desarrollador Fullstack Python · Hecho por <span class="text-accent">Juan David Garay</span>
+    </footer>
+    <style>
+      .blue-button {
+        background-color: #3483FA;
+        color: white;
+        padding: 10px 24px;
+        text-decoration: none;
+        border-radius: 5px;
+        display: inline-block;
+        font-size: 16px;
+        transition: background-color 0.3s;
+        font-family: Arial, sans-serif;
+      }
+      .blue-button:hover {
+        background-color: #2a68c8;
+      }
+    </style>
+    <script type="text/javascript">
+       (function() {
+          function $MPC_load() {
+             window.$MPC_loaded !== true && (function() {
+             var s = document.createElement("script");
+             s.type = "text/javascript";
+             s.async = true;
+             s.src = document.location.protocol + "//secure.mlstatic.com/mptools/render.js";
+             var x = document.getElementsByTagName('script')[0];
+             x.parentNode.insertBefore(s, x);
+             window.$MPC_loaded = true;
+          })();
+       }
+       window.$MPC_loaded !== true ? (window.attachEvent ? window.attachEvent('onload', $MPC_load) : window.addEventListener('load', $MPC_load, false)) : null;
+       })();
+      /*
+            // to receive event with message when closing modal from congrants back to site
+            function $MPC_message(event) {
+              // onclose modal ->CALLBACK FUNCTION
+             // !!!!!!!!FUNCTION_CALLBACK HERE Received message: {event.data} preapproval_id !!!!!!!!
+            }
+            window.$MPC_loaded !== true ? (window.addEventListener("message", $MPC_message)) : null; 
+            */
+    </script>
+  </body>
+</html> 
